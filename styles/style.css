@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    background: transparent;
 }
 
 :root {
@@ -33,6 +33,5 @@
     text-align: center;
     padding: 0vh;
     text-overflow: string;
-    font-family: "Noto Serif", serif;
     margin-right: 4vh;
 }
