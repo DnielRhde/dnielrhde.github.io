@@ -5,9 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
 </head>
-<body>
-    <h1>This is a test</h1>
+<body style="margin:0px;padding: 0px;">
+    <div class="main-wrapper">
+        <div class="main-container">
+            <img id="image" width="100%" height="100%" src=""></img>
+        </div>
+        <div class="main-container" id="main-container-text" style="overflow-y:scroll;scroll-behavior: smooth">
+            <div id="year" style="pointer-events: none;position: absolute; z-index: 30;display: flex; height: 100vh; flex-direction: column; font-size: 2vh; width: 5vh; text-align: center;">
+                
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1960">1960</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1961">1961</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1962">1962</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1963">1963</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1964">1964</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1965">1965</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1966">1966</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1967">1967</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1968">1968</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1969">1969</p></div>
+
+            </div>
+            <div class="post" id="test">
+                <h2>
+                    Apollo 11
+                </h2>
+                <p>
+                    Apollo var e...r. .d.....s dsfksdj hfdsf jsdbf a....jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj 1euh1ueg1ye11111111111111111 111111111111111
+                </p>
+            </div>
+        </div>
+        <script>
+            var scrollInterval = 0;
+            const interval = setInterval(function() {
+                scrollInterval = scrollInterval+window.innerHeight;
+                document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                console.log(document.getElementById("main-container-text").scrollHeight)
+                console.log(scrollInterval);
+                if(scrollInterval == document.getElementById("main-container-text").scrollHeight){
+                    scrollInterval = 0;
+                    document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                }
+            }, 5000);
+
+            var posts = [
+                {
+                    "title":"Apollo dsdfsaf11",
+                    "year":1963,
+                    "text":"apollo var et dsjfj hdjfh sduf as diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
+                    "img":"https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg",
+                },
+                {
+                    "title":"Somethinngngngnngng",
+                    "year":1965,
+                    "text":"fffffffffffffffffffffff s diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
+                    "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
+                },
+                {
+                    "title":"Somethjfjdkjfhdskjfhsdifhinngngngnngng",
+                    "year":1969,
+                    "text":"noice",
+                    "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
+                }
+            ];
+            document.getElementById("year").style.right = document.getElementById("year").offsetWidth+"px";
+            ///////postsss
+            for (let i = 0; i < posts.length; i++) {
+                console.log(posts[i]["text"])
+                var clone = document.getElementById("test").cloneNode(true);
+                clone.id = i;
+                clone.style.height = "80vh";
+                clone.style.padding = "10vh";
+
+                clone.querySelector("h2").textContent = posts[i].title;
+                clone.querySelector("p").textContent = posts[i].text;
+
+                document.getElementById("main-container-text").appendChild(clone);
+            }
+            ///scrollllll
+            document.getElementById("main-container-text").onscroll = function() {
+                var x = document.getElementById("main-container-text").scrollTop/document.getElementById("main-container-text").scrollHeight
+                var postHeight = window.innerHeight/document.getElementById("main-container-text").scrollHeight
+                var postToShow = Math.round((Math.round(x / postHeight) * postHeight)/postHeight)
+                
+                console.log(postToShow);
+                document.getElementById("image").src = posts[postToShow]["img"]
+                
+                for (let i = 1960; i < 1970; i++) {
+                    document.getElementById(i).style.fontSize = "100%";
+                }
+                document.getElementById(posts[postToShow]["year"]).style.fontSize = "200%";
+
+            }
+        </script>
+    </div>
+
     
 </body>
 </html>

@@ -1,0 +1,38 @@
+::-webkit-scrollbar {
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+:root {
+    --main-bg-color: coral;
+  }
+  
+
+.main-wrapper{
+    margin:0px;
+    display:flex; 
+    height: 100vh; 
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-container{
+    flex:1;
+}
+
+#image{
+    object-fit: cover;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3vh;
+    background-color: white;
+    height: 0vh;
+    position: relative;
+    text-align: center;
+    padding: 0vh;
+    text-overflow: string;
+    font-family: "Noto Serif", serif;
+    margin-right: 4vh;
+}
