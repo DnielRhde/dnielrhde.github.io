@@ -76,7 +76,7 @@
                 isPhone = true;
                 console.log("truedd");
                 document.getElementById("billede").style.flex = "0";
-                document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)),url('"+posts[0]["img"]+"')";
+                document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[0]["img"]+"')";
             }
             ///////////
 
@@ -121,7 +121,7 @@
                 //console.log(postToShow);
                 document.getElementById("image").src = posts[postToShow]["img"]
                 if(isPhone==true){
-                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)),url('"+posts[postToShow]["img"]+"')"
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[postToShow]["img"]+"')"
                 }
                 
                 for (let i = 1960; i < 1970; i++) {
