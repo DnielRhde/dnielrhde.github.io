@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
 </head>
 <body style="margin:0px;padding: 0px;font-family: Noto Serif, serif; background-size: cover;background-repeat: no-repeat;background-position: center;" id="body">
+    <img id="qr" style="position: absolute; height: 14h; width: 14vh; margin: 3vh; border-radius: 8%;" src="qr.png"></img>
     <div class="main-wrapper">
         <div class="main-container" id="billede" style="flex:1">
             <img id="image" width="100%" height="100%" src=""></img>
@@ -38,35 +39,35 @@
         <script>
             var posts = [
                 {
-                    "title":"hh dhsd hhdhd",
+                    "title":"Knud Enemark",
                     "year":1960,
-                    "text":"apollo var et dsjfj hdjfh sduf as diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
-                    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/270px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+                    "text":"Der var i alt OL 6 gange i løbet a 60’erne, det er både sommer og vinter. Sommer-OL 1960 var nok den mest spændene da det var den første gang de blev vist live på tv, det var aldrig noget man havde gjort før. Cykelrytteren Knud Enemark kollapsede, på grund af doping og døde. Danmark vandt sølv i fodbold. Paul Elvstrøm vandt sin fjerde guldmedalje i træk og blev anset som en af de bedste sejlere nogensinde.",
+                    "img":"https://alchetron.com/cdn/knud-enemark-jensen-16c1bf04-37d5-4c8d-b828-95933154de1-resize-750.jpeg",
                 },
                 {
-                    "title":"Apollo dsdfsaf11",
+                    "title":"Første mand i rummet",
+                    "year":1961,
+                    "text":"Yuri Aleksejevitj Gagarin (født 9. marts 1934 i Klusjino, Smolensk oblast, død 27. marts 1968 i Novosjolova, Vladimir oblast i Rusland) var sovjetisk kosmonaut, som var den første mand i rummet i 1961.",
+                    "img":"https://www.history.com/.image/t_share/MTU3ODc4NjA0ODU4NTMzNTk5/image-placeholder-title.jpg",
+                },
+                {
+                    "title":"Berlin muren",
+                    "year":1961,
+                    "text":"I 1961 begyndte murens opbygning. Den 45,1 kilometer lange og 4,2 meter høje mur var en lang processe at bygge, den tog omkring 4 år at bygge. Muren blev indført da Berlin var en delstat delt imellem Sovjet unionen, Frankrig, England og Amerika. Murens formål var at holde det kommunike Østberlin væk fra det allieredes Vestberlin.",
+                    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Berlinermauer.jpg/300px-Berlinermauer.jpg",
+                },
+                {
+                    "title":"Milkshakebar",
                     "year":1963,
-                    "text":"Apollo 11-missionen var den første bemandede månelanding. Det var den femte bemandede mission i Apollo-programmet. Neil Armstrong blev det første menneske, der betrådte Månen, fulgt af Buzz Aldrin. Michael Collins forblev i kredsløb om Månen. Da Armstrong trådte ned på måneoverfladen, udtalte han de kendte ord.",
-                    "img":"https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg",
+                    "text":"Milkshakebarerne er en bar hvor unge lytter til pop og drikker blændet mælk, disse barer var rigtig populære i 60’erne. Mad og Hvorfor? Mange kvinder er begyndt at gå på arbejde (i 60’erne) og derfor har de ikke lige så lang tid, til at stå og lave mad. Derfor blev færdigretter, smøremadder og gryderetter meget populære.",
+                    "img":"http://www.cykelkurt.com/musik/60-erne/malkepop-45.jpg",
                 },
                 {
-                    "title":"Somethinn gngngnngng",
-                    "year":1965,
-                    "text":"fffffffffffffffffffffff s diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
-                    "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
-                },
-                {
-                    "title":"køleskab",
-                    "year":1965,
-                    "text":"fffffffffffffffffffffff s diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
-                    "img":"https://www.cnet.com/a/img/resize/3be58b218810a0d5ba3c43c20e1eb140b8509bb2/hub/2016/07/15/bda3c418-740a-4183-93fc-3b95d5a1cc58/samsung-family-hub-refrigerator-promo.jpg?auto=webp&width=768",
-                },
-                {
-                    "title":"Somethjfjdkj fh dskjfhsdifh inngngngnngng",
+                    "title":"Apollo 11",
                     "year":1969,
-                    "text":"noice",
-                    "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
-                }
+                    "text":"Apollo 11 var den første rumraket til at lande på månen, og Neil Armstrong var det først menneske på månen, det var hans berømte ord 'One small step for man, one big step for mankind' og 19 minutter efter tog Buzz Aldrin sit første skridt på månen. Astronauterne var 21 t 36 min og 20 sek. På måneoverfladen. ",
+                    "img":"https://cdn.mos.cms.futurecdn.net/mxMV3eZ8vJNqgyrnjrHg3B-1200-80.jpg",
+                },
             ];
 
             var isPhone = false
@@ -77,6 +78,8 @@
                 console.log("truedd");
                 document.getElementById("billede").style.flex = "0";
                 document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[0]["img"]+"')";
+                document.getElementById("qr").style.height = "0vh";
+                document.getElementById("qr").style.width = "0vh";
             }
             ///////////
 
@@ -94,7 +97,7 @@
                         document.getElementById("main-container-text").scrollTo(0, scrollInterval)
                     }
                 }
-            }, 1000);
+            }, 15000);
 
 
 
