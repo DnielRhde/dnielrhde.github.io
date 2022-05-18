@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
 </head>
-<body style="margin:0px;padding: 0px;font-family: Noto Serif, serif;">
+<body style="margin:0px;padding: 0px;font-family: Noto Serif, serif; background-size: cover;background-repeat: no-repeat;background-position: center;" id="body">
     <div class="main-wrapper">
-        <div class="main-container">
+        <div class="main-container" id="billede" style="flex:1">
             <img id="image" width="100%" height="100%" src=""></img>
         </div>
-        <div class="main-container" id="main-container-text" style="overflow-y:scroll;scroll-behavior: smooth">
+        <div class="main-container" id="main-container-text" style="flex:1;overflow-y:scroll;scroll-behavior: smooth">
             <div id="year" style="pointer-events: none;position: absolute; z-index: 30;display: flex; height: 100vh; flex-direction: column; font-size: 2vh; width: 5vh; text-align: center;">
                 
                 <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1960">1960</p></div>
@@ -30,50 +30,78 @@
             </div>
             <div class="post" id="test">
                 <h2>
-                    Apollo 11
                 </h2>
                 <p>
-                    Apollo var e...r. .d.....s dsfksdj hfdsf jsdbf a....jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj 1euh1ueg1ye11111111111111111 111111111111111
                 </p>
             </div>
         </div>
         <script>
-            var scrollInterval = 0;
-            const interval = setInterval(function() {
-                scrollInterval = scrollInterval+window.innerHeight;
-                document.getElementById("main-container-text").scrollTo(0, scrollInterval)
-                console.log(document.getElementById("main-container-text").scrollHeight)
-                console.log(scrollInterval);
-                if(scrollInterval == document.getElementById("main-container-text").scrollHeight){
-                    scrollInterval = 0;
-                    document.getElementById("main-container-text").scrollTo(0, scrollInterval)
-                }
-            }, 5000);
-
             var posts = [
+                {
+                    "title":"hh dhsd hhdhd",
+                    "year":1960,
+                    "text":"apollo var et dsjfj hdjfh sduf as diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
+                    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/270px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+                },
                 {
                     "title":"Apollo dsdfsaf11",
                     "year":1963,
-                    "text":"apollo var et dsjfj hdjfh sduf as diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
+                    "text":"Apollo 11-missionen var den første bemandede månelanding. Det var den femte bemandede mission i Apollo-programmet. Neil Armstrong blev det første menneske, der betrådte Månen, fulgt af Buzz Aldrin. Michael Collins forblev i kredsløb om Månen. Da Armstrong trådte ned på måneoverfladen, udtalte han de kendte ord.",
                     "img":"https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg",
                 },
                 {
-                    "title":"Somethinngngngnngng",
+                    "title":"Somethinn gngngnngng",
                     "year":1965,
                     "text":"fffffffffffffffffffffff s diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
                     "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
                 },
                 {
-                    "title":"Somethjfjdkjfhdskjfhsdifhinngngngnngng",
+                    "title":"køleskab",
+                    "year":1965,
+                    "text":"fffffffffffffffffffffff s diouasj iulaslhliu dhaiyu 9y3hiuhyidsuflhauil dshiulahdsf ",
+                    "img":"https://www.cnet.com/a/img/resize/3be58b218810a0d5ba3c43c20e1eb140b8509bb2/hub/2016/07/15/bda3c418-740a-4183-93fc-3b95d5a1cc58/samsung-family-hub-refrigerator-promo.jpg?auto=webp&width=768",
+                },
+                {
+                    "title":"Somethjfjdkj fh dskjfhsdifh inngngngnngng",
                     "year":1969,
                     "text":"noice",
                     "img":"https://www.experimentarium.dk/wp-content/uploads/2019/07/apollo11.jpg",
                 }
             ];
+
+            var isPhone = false
+            /////check for phone/computer
+            
+            if(window.innerHeight > window.innerWidth){
+                isPhone = true;
+                console.log("truedd");
+                document.getElementById("billede").style.flex = "0";
+                document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)),url('"+posts[0]["img"]+"')";
+            }
+            ///////////
+
+
+            var scrollInterval = 0;
+            
+            const interval = setInterval(function() {
+                if(isPhone == false){
+                    scrollInterval = scrollInterval+window.innerHeight;
+                    document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                    console.log(document.getElementById("main-container-text").scrollHeight)
+                    console.log(scrollInterval);
+                    if(scrollInterval == document.getElementById("main-container-text").scrollHeight){
+                        scrollInterval = 0;
+                        document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                    }
+                }
+            }, 1000);
+
+
+
             document.getElementById("year").style.right = document.getElementById("year").offsetWidth+"px";
             ///////postsss
             for (let i = 0; i < posts.length; i++) {
-                console.log(posts[i]["text"])
+                //console.log(posts[i]["text"])
                 var clone = document.getElementById("test").cloneNode(true);
                 clone.id = i;
                 clone.style.height = "80vh";
@@ -90,8 +118,11 @@
                 var postHeight = window.innerHeight/document.getElementById("main-container-text").scrollHeight
                 var postToShow = Math.round((Math.round(x / postHeight) * postHeight)/postHeight)
                 
-                console.log(postToShow);
+                //console.log(postToShow);
                 document.getElementById("image").src = posts[postToShow]["img"]
+                if(isPhone==true){
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)),url('"+posts[postToShow]["img"]+"')"
+                }
                 
                 for (let i = 1960; i < 1970; i++) {
                     document.getElementById(i).style.fontSize = "100%";

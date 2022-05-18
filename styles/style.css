@@ -27,11 +27,14 @@
     flex-direction: column;
     justify-content: center;
     font-size: 3vh;
-    background-color: white;
     height: 0vh;
     position: relative;
     text-align: center;
     padding: 0vh;
     text-overflow: string;
     margin-right: 4vh;
+}
+
+@media screen {
+    
 }
