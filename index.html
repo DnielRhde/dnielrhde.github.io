@@ -88,11 +88,11 @@
             
             const interval = setInterval(function() {
                 if(isPhone == false){
-                    scrollInterval = scrollInterval+window.innerHeight;
+                    scrollInterval = scrollInterval+(window.innerHeight*1);
                     document.getElementById("main-container-text").scrollTo(0, scrollInterval)
                     console.log(document.getElementById("main-container-text").scrollHeight)
                     console.log(scrollInterval);
-                    if(scrollInterval == document.getElementById("main-container-text").scrollHeight){
+                    if(scrollInterval >= document.getElementById("main-container-text").scrollHeight){
                         scrollInterval = 0;
                         document.getElementById("main-container-text").scrollTo(0, scrollInterval)
                     }
@@ -107,7 +107,7 @@
                 //console.log(posts[i]["text"])
                 var clone = document.getElementById("test").cloneNode(true);
                 clone.id = i;
-                clone.style.height = "80vh";
+                clone.style.height = "90vh";
                 clone.style.padding = "5vh";
 
                 clone.querySelector("h2").textContent = posts[i].title;
