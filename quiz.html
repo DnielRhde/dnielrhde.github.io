@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+</head>
+<body style="height: 100vh;width: 100vw;margin: 0px;font-family: Noto Serif, serif">
+
+    <div style="display: none;justify-content: center;align-items: center;flex-direction: column;position:absolute;height:100%;width:100%; background-color:red" id="wrong">
+        <h1 style="color:white">Forkert</h1>
+    </div>
+    <div style="display: none;justify-content: center;align-items: center;flex-direction: column;position:absolute;height:100%;width:100%; background-color:green" id="rigtigt">
+        <h1 style="color:white">Rigtigt</h1>
+    </div>
+    <div style="display: none;justify-content: center;align-items: center;flex-direction: column;position:absolute;height:100%;width:100%; background-color:black;font-size: 3vw;text-align: center;" id="done">
+        <h1 style="color:white">Tillykke du er færdig. Gå ud i det gode vejr :)....</h1>
+    </div>
+    <div id="post" style="text-align: center;height: 100%;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+        <h1 id="que">
+            dddd
+        </h1>
+        <button onclick="svar(document.getElementById('svar1').textContent)" id="svar1" style="margin: 5vh;border-radius:0%;border:20px solid black;background-color:black;color:white">
+            djjdjdjdjjds
+        </button>
+        <button onclick="svar(document.getElementById('svar2').textContent)" id="svar2" style="margin: 5vh;border-radius:0%;border:20px solid black;background-color:black;color:white">
+            djjdjdjdjjds
+        </button>
+        <button onclick="svar(document.getElementById('svar3').textContent)" id="svar3" style="margin: 5vh;border-radius:0%;border:20px solid black;background-color:black;color:white">
+            djjdjdjdjjds
+        </button>
+
+    </div>
+    <script>
+
+
+            var queNumber = -1;
+            var posts = [
+                {
+                    "que":"Hvem kollapsed under sommer OL?",
+                    "forkert1":"Jones Math",
+                    "forkert2":"Albi Skykrer",
+                    "svar":"Knud Enemark",
+                },
+                {
+                    "que":"Hvem var den første mand i rummet?",
+                    "forkert1":"Andreas Mogensen",
+                    "forkert2":"Yull Sue",
+                    "svar":"Yuri Aleksejevitj Gagarin",
+                },
+                {
+                    "que":"Hvilke mur blev bygget i 1961?",
+                    "forkert1":"Den Kinesiske Mur",
+                    "forkert2":"Der blev ikke bygget nogen mur",
+                    "svar":"Berlin Muren",
+                },
+                {
+                    "que":"Hvorfor gik unge i 60'erne på milkshakebar?",
+                    "forkert1":"For at lytte til høj rock",
+                    "forkert2":"For at få et glas varmt mælk med honning",
+                    "svar":"For at drikke blandet mælk",
+                },
+                {
+                    "que":"Hvilket rum program var det første til at lande på månen?",
+                    "forkert1":"Saturn V",
+                    "forkert2":"Starship",
+                    "svar":"Apollo 11",
+                },
+                {
+                    "que":"Hvor mange mennesker kom til festivalen Woodstock?",
+                    "forkert1":"50.000",
+                    "forkert2":"620.100",
+                    "svar":"500.000",
+                },
+            ];
+
+            function svar(thesvar){
+                
+                if(thesvar == posts[queNumber]["svar"]){
+                    console.log("true");
+                    document.getElementById("rigtigt").style.display = "flex";
+                    setTimeout(function(){ 
+                        document.getElementById("rigtigt").style.display = "none";
+                        newQue();
+                    }, 1500);
+                } else {
+                    console.log("false");
+                    document.getElementById("wrong").style.display = "flex";
+                    setTimeout(function(){ 
+                        document.getElementById("wrong").style.display = "none";
+                        newQue();
+                    }, 1500);
+                }
+            }
+
+            newQue();
+
+            function newQue(){
+
+                
+
+                queNumber++;
+
+                console.log(queNumber);
+                if(queNumber == posts.length){
+                    document.getElementById("done").style.display = "flex";
+                }
+
+                document.getElementById("que").textContent = posts[queNumber]["que"];
+                
+            
+                document.getElementById("svar1").textContent = posts[queNumber]["forkert1"];
+                document.getElementById("svar2").textContent = posts[queNumber]["forkert2"];
+                document.getElementById("svar3").textContent = posts[queNumber]["svar"];
+
+                var ra = Math.floor(Math.random() * 3);;
+                console.log(ra);
+                if(ra == 0){
+                    document.getElementById("svar1").textContent = posts[queNumber]["forkert1"];
+                    document.getElementById("svar2").textContent = posts[queNumber]["forkert2"];
+                    document.getElementById("svar3").textContent = posts[queNumber]["svar"];
+                }
+                if(ra == 1){
+                    document.getElementById("svar1").textContent = posts[queNumber]["svar"];
+                    document.getElementById("svar2").textContent = posts[queNumber]["forkert1"];
+                    document.getElementById("svar3").textContent = posts[queNumber]["forkert2"];
+                }
+                if(ra == 2){
+                    document.getElementById("svar1").textContent = posts[queNumber]["forkert1"];
+                    document.getElementById("svar2").textContent = posts[queNumber]["svar"];
+                    document.getElementById("svar3").textContent = posts[queNumber]["forkert2"];
+                }
+                
+            }
+    </script>
+</body>
