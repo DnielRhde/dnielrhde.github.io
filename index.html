@@ -30,43 +30,58 @@
 
             </div>
             <div class="post" id="test">
-                <h2>
+                <h2 style="font-size:6vh">
                 </h2>
-                <p>
+                <p style="line-height: 1.6;">
                 </p>
+                <h5 style="position: absolute;bottom:0px">
+                    
+                </h5>
             </div>
         </div>
         <script>
             var posts = [
                 {
+                    "forfatter":"noooooo",
                     "title":"Knud Enemark",
                     "year":1960,
                     "text":"Der var i alt OL 6 gange i løbet a 60’erne, det er både sommer og vinter. Sommer-OL 1960 var nok den mest spændene da det var den første gang de blev vist live på tv, det var aldrig noget man havde gjort før. Cykelrytteren Knud Enemark kollapsede, på grund af doping og døde. Danmark vandt sølv i fodbold. Paul Elvstrøm vandt sin fjerde guldmedalje i træk og blev anset som en af de bedste sejlere nogensinde.",
                     "img":"https://alchetron.com/cdn/knud-enemark-jensen-16c1bf04-37d5-4c8d-b828-95933154de1-resize-750.jpeg",
                 },
                 {
+                    "forfatter":"noooooo",
                     "title":"Første mand i rummet",
                     "year":1961,
                     "text":"Yuri Aleksejevitj Gagarin (født 9. marts 1934 i Klusjino, Smolensk oblast, død 27. marts 1968 i Novosjolova, Vladimir oblast i Rusland) var sovjetisk kosmonaut, som var den første mand i rummet i 1961.",
                     "img":"https://www.history.com/.image/t_share/MTU3ODc4NjA0ODU4NTMzNTk5/image-placeholder-title.jpg",
                 },
                 {
+                    "forfatter":"noooooo",
                     "title":"Berlin muren",
                     "year":1961,
                     "text":"I 1961 begyndte murens opbygning. Den 45,1 kilometer lange og 4,2 meter høje mur var en lang processe at bygge, den tog omkring 4 år at bygge. Muren blev indført da Berlin var en delstat delt imellem Sovjet unionen, Frankrig, England og Amerika. Murens formål var at holde det kommunike Østberlin væk fra det allieredes Vestberlin.",
                     "img":"https://thierrynoir.com/wp-content/uploads/2018/04/13-Clean-Up-1024x779.jpg",
                 },
                 {
+                    "forfatter":"noooooo",
                     "title":"Milkshakebar",
                     "year":1963,
                     "text":"Milkshakebarerne er en bar hvor unge lytter til pop og drikker blændet mælk, disse barer var rigtig populære i 60’erne. Mad og Hvorfor? Mange kvinder er begyndt at gå på arbejde (i 60’erne) og derfor har de ikke lige så lang tid, til at stå og lave mad. Derfor blev færdigretter, smøremadder og gryderetter meget populære.",
                     "img":"http://www.cykelkurt.com/musik/60-erne/malkepop-45.jpg",
                 },
                 {
+                    "forfatter":"noooooo",
                     "title":"Apollo 11",
                     "year":1969,
                     "text":"Apollo 11 var den første rumraket til at lande på månen, og Neil Armstrong var det først menneske på månen, det var hans berømte ord 'One small step for man, one big step for mankind' og 19 minutter efter tog Buzz Aldrin sit første skridt på månen. Astronauterne var 21 t 36 min og 20 sek. På måneoverfladen. ",
                     "img":"https://cdn.mos.cms.futurecdn.net/mxMV3eZ8vJNqgyrnjrHg3B-1200-80.jpg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Woodstock",
+                    "year":1969,
+                    "text":"Woodstock var en musikfestival, som fandt sted den 15. august - 17. august 1969. Festivalen forgik på en mark ca. 60 km. Sydvest for byen Woodstuck i den amerikanske delstat i USA. Dem der havde planlagt festivalen, havde regnet med at der ville komme højest 50.000 mennesker. Men da der pludselig var op mod 500.000 mennesker, var der hverken mad eller toiletter nok. Så det var næsten et mirakel at der kun var to der døde.",
+                    "img":"https://plusbog-v2-dk.s3.amazonaws.com/covers/variations/000569/000569505_woodstock-1969-9781510730731_1_0.jpg",
                 },
             ];
 
@@ -112,6 +127,8 @@
 
                 clone.querySelector("h2").textContent = posts[i].title;
                 clone.querySelector("p").textContent = posts[i].text;
+                //clone.querySelector("h5").textContent = posts[i].forfatter;
+
 
                 document.getElementById("main-container-text").appendChild(clone);
             }
