@@ -19,7 +19,10 @@
         <h1 style="color:white">Tillykke du er færdig. Gå ud i det gode vejr :)....</h1>
     </div>
     <div style="padding: 5%;display: none;justify-content: center;align-items: center;flex-direction: column;position:absolute;height:100%;width:100%; background-color:black;font-size: 3vw;text-align: center;" id="why">
-        <h1 style="color:white">Why aRe YoU StIlL HeRE????</h1>
+        <h1 style="color:white">the world says goodby....</h1>
+    </div>
+    <div style="padding: 5%;display: none;justify-content: center;align-items: center;flex-direction: column;position:absolute;height:100%;width:100%; background-color:black;font-size: 3vw;text-align: center;" id="why2">
+        <h1 style="color:white">why you stiLl heere.??..</h1>
     </div>
     <div id="post" style="text-align: center;height: 100%;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;">
         <h1 id="que">
@@ -111,6 +114,9 @@
                     document.getElementById("done").style.display = "flex";
                     setTimeout(function(){ 
                         document.getElementById("why").style.display = "flex";
+                        setTimeout(function(){ 
+                            document.getElementById("why2").style.display = "flex";
+                        }, 20000);
                     }, 40000);
                 }
 
