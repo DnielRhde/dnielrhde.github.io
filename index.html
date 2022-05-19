@@ -103,7 +103,7 @@
             
             const interval = setInterval(function() {
                 if(isPhone == false){
-                    scrollInterval = scrollInterval+(window.innerHeight*1);
+                    scrollInterval = scrollInterval+(window.innerHeight*1.04);
                     document.getElementById("main-container-text").scrollTo(0, scrollInterval)
                     console.log(document.getElementById("main-container-text").scrollHeight)
                     console.log(scrollInterval);
@@ -123,14 +123,16 @@
                 var clone = document.getElementById("test").cloneNode(true);
                 clone.id = i;
                 clone.style.height = "90vh";
-                clone.style.padding = "5vh";
-
+                clone.style.padding = "7vh";
+                if(isPhone == true){
+                    clone.style.padding = "5vh";
+                }
                 clone.querySelector("h2").textContent = posts[i].title;
                 clone.querySelector("p").textContent = posts[i].text;
                 //clone.querySelector("h5").textContent = posts[i].forfatter;
 
-
                 document.getElementById("main-container-text").appendChild(clone);
+            
             }
             ///scrollllll
             document.getElementById("main-container-text").onscroll = function() {
