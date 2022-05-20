@@ -94,19 +94,18 @@
             var isPhone = false
             /////check for phone/computer
             
-            if(window.innerHeight > window.innerWidth){
-                isPhone = true;
-                console.log("truedd");
-                document.getElementById("billede").style.flex = "0";
-                document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[0]["img"]+"')";
-                document.getElementById("qr").style.height = "0vh";
-                document.getElementById("qr").style.width = "0vh";
-            }
+            window.addEventListener('resize', function(event){
+                console.log("testdddd");
+                reload();
+            });
+        
             ///////////
 
 
-            var scrollInterval = 0;
+            var scrollInterval = 1;
             
+
+
             const interval = setInterval(function() {
                 if(isPhone == false){
                     scrollInterval = scrollInterval+(window.innerHeight*1.04);
@@ -158,6 +157,25 @@
                 document.getElementById(posts[postToShow]["year"]).style.fontSize = "200%";
 
             }
+
+            function reload(){
+
+                document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                console.log("scrolll");
+
+                if(window.innerHeight > window.innerWidth){
+                    isPhone = true;
+                    document.getElementById("billede").style.flex = "0";
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[0]["img"]+"')";
+
+                } else {
+                    isPhone = false;
+                    document.getElementById("billede").style.flex = "1";
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),url('"+posts[0]["img"]+"')";
+
+                }
+            }
+            reload();
         </script>
     </div>
 
