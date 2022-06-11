@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+</head>
+<body style="margin:0px;padding: 0px;font-family: Noto Serif, serif; background-size: cover;background-repeat: no-repeat;background-position: center;" id="body">
+    <div style="position: absolute; ">
+        <img id="qr" style="height: 13h; width: 13vh; margin: 3vh;margin-bottom: 0vh; border-radius: 8%;" src="qr.png"></img>
+        <div style="margin-left: 3vh;width: 13vh;border-radius: 1.2vh;height:1.8em;background-color: white;display:flex;justify-content:center;align-items: center;">
+            <p style="text-align: center;width:13vh;">Quiz ^</p>   
+        </div>
+    </div>
+    
+    <div class="main-wrapper">
+        <div class="main-container" id="billede" style="flex:1">
+            <img id="image" width="100%" height="100%" src=""></img>
+        </div>
+        <div class="main-container" id="main-container-text" style="flex:1;overflow-y:scroll;scroll-behavior: smooth">
+            <div id="year" style="pointer-events: none;position: absolute; z-index: 30;display: flex; height: 100vh; flex-direction: column; font-size: 2vh; width: 4vh; text-align: center;">
+                
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1960">1960</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1961">1961</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1962">1962</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1963">1963</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1964">1964</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1965">1965</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1966">1966</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1967">1967</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1968">1968</p></div>
+                <div style="flex:1; display: flex;align-items: center;justify-content: center;"><p id="1969">1969</p></div>
+
+            </div>
+            <div class="post" id="test">
+                <h2 style="font-size:6vh">
+                </h2>
+                <p style="line-height: 1.6;">
+                </p>
+                <h5 style="position: absolute;bottom:0px">
+                    
+                </h5>
+            </div>
+        </div>
+        <script>
+            var posts = [
+                {
+                    "forfatter":"noooooo",
+                    "title":"Knud Enemark",
+                    "year":1960,
+                    "text":"Der var i alt OL 6 gange i løbet a 60’erne, det er både sommer og vinter. Sommer-OL 1960 var nok den mest spændene da det var den første gang de blev vist live på tv, det var aldrig noget man havde gjort før. Cykelrytteren Knud Enemark kollapsede, på grund af doping og døde. Danmark vandt sølv i fodbold. Paul Elvstrøm vandt sin fjerde guldmedalje i træk og blev anset som en af de bedste sejlere nogensinde.",
+                    "img":"https://alchetron.com/cdn/knud-enemark-jensen-16c1bf04-37d5-4c8d-b828-95933154de1-resize-750.jpeg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Første mand i rummet",
+                    "year":1961,
+                    "text":"Yuri Aleksejevitj Gagarin (født 9. marts 1934 i Klusjino, Smolensk oblast, død 27. marts 1968 i Novosjolova, Vladimir oblast i Rusland) var sovjetisk kosmonaut, som var den første mand i rummet i 1961.",
+                    "img":"https://www.history.com/.image/t_share/MTU3ODc4NjA0ODU4NTMzNTk5/image-placeholder-title.jpg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Berlin muren",
+                    "year":1961,
+                    "text":"I 1961 begyndte murens opbygning. Den 45,1 kilometer lange og 4,2 meter høje mur var en lang processe at bygge, den tog omkring 4 år at bygge. Muren blev indført da Berlin var en delstat delt imellem Sovjet unionen, Frankrig, England og Amerika. Murens formål var at holde det kommunike Østberlin væk fra det allieredes Vestberlin.",
+                    "img":"https://thierrynoir.com/wp-content/uploads/2018/04/13-Clean-Up-1024x779.jpg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Milkshakebar",
+                    "year":1963,
+                    "text":"Milkshakebarerne er en bar hvor unge lytter til pop og drikker blændet mælk, disse barer var rigtig populære i 60’erne. Mad og Hvorfor? Mange kvinder er begyndt at gå på arbejde (i 60’erne) og derfor har de ikke lige så lang tid, til at stå og lave mad. Derfor blev færdigretter, smøremadder og gryderetter meget populære.",
+                    "img":"http://www.cykelkurt.com/musik/60-erne/malkepop-45.jpg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Apollo 11",
+                    "year":1969,
+                    "text":"Apollo 11 var den første rumraket til at lande på månen, og Neil Armstrong var det først menneske på månen, det var hans berømte ord 'One small step for man, one big step for mankind' og 19 minutter efter tog Buzz Aldrin sit første skridt på månen. Astronauterne var 21 t 36 min og 20 sek. På måneoverfladen. ",
+                    "img":"https://cdn.mos.cms.futurecdn.net/mxMV3eZ8vJNqgyrnjrHg3B-1200-80.jpg",
+                },
+                {
+                    "forfatter":"noooooo",
+                    "title":"Woodstock",
+                    "year":1969,
+                    "text":"Woodstock var en musikfestival, som fandt sted den 15. august - 17. august 1969. Festivalen forgik på en mark ca. 60 km. Sydvest for byen Woodstuck i den amerikanske delstat i USA. Dem der havde planlagt festivalen, havde regnet med at der ville komme højest 50.000 mennesker. Men da der pludselig var op mod 500.000 mennesker, var der hverken mad eller toiletter nok. Så det var næsten et mirakel at der kun var to der døde.",
+                    "img":"https://plusbog-v2-dk.s3.amazonaws.com/covers/variations/000569/000569505_woodstock-1969-9781510730731_1_0.jpg",
+                },
+            ];
+
+            var isPhone = false
+            /////check for phone/computer
+            
+            window.addEventListener('resize', function(event){
+                console.log("testdddd");
+                reload();
+            });
+        
+            ///////////
+
+
+            var scrollInterval = 1;
+            
+
+
+            const interval = setInterval(function() {
+                if(isPhone == false){
+                    scrollInterval = scrollInterval+(window.innerHeight*1.04);
+                    document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                    console.log(document.getElementById("main-container-text").scrollHeight)
+                    console.log(scrollInterval);
+                    if(scrollInterval >= document.getElementById("main-container-text").scrollHeight){
+                        scrollInterval = 0;
+                        document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                    }
+                }
+            }, 15000);
+
+
+
+            document.getElementById("year").style.right = document.getElementById("year").offsetWidth+"px";
+            ///////postsss
+            for (let i = 0; i < posts.length; i++) {
+                //console.log(posts[i]["text"])
+                var clone = document.getElementById("test").cloneNode(true);
+                clone.id = i;
+                clone.style.height = "90vh";
+                clone.style.padding = "7vh";
+                if(isPhone == true){
+                    clone.style.padding = "5vh";
+                }
+                clone.querySelector("h2").textContent = posts[i].title;
+                clone.querySelector("p").textContent = posts[i].text;
+                //clone.querySelector("h5").textContent = posts[i].forfatter;
+
+                document.getElementById("main-container-text").appendChild(clone);
+            
+            }
+            ///scrollllll
+            document.getElementById("main-container-text").onscroll = function() {
+                var x = document.getElementById("main-container-text").scrollTop/document.getElementById("main-container-text").scrollHeight
+                var postHeight = window.innerHeight/document.getElementById("main-container-text").scrollHeight
+                var postToShow = Math.round((Math.round(x / postHeight) * postHeight)/postHeight)
+                
+                //console.log(postToShow);
+                document.getElementById("image").src = posts[postToShow]["img"]
+                if(isPhone==true){
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[postToShow]["img"]+"')"
+                }
+                
+                for (let i = 1960; i < 1970; i++) {
+                    document.getElementById(i).style.fontSize = "100%";
+                }
+                document.getElementById(posts[postToShow]["year"]).style.fontSize = "200%";
+
+            }
+
+            function reload(){
+
+                document.getElementById("main-container-text").scrollTo(0, scrollInterval)
+                console.log("scrolll");
+
+                if(window.innerHeight > window.innerWidth){
+                    isPhone = true;
+                    document.getElementById("billede").style.flex = "0";
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)),url('"+posts[0]["img"]+"')";
+
+                } else {
+                    isPhone = false;
+                    document.getElementById("billede").style.flex = "1";
+                    document.getElementById("body").style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),url('"+posts[0]["img"]+"')";
+
+                }
+            }
+            reload();
+        </script>
+    </div>
+
+    
+</body>
+</html>
